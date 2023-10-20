@@ -1,0 +1,174 @@
+/* Navbar */
+.navbar {
+    background-color: #ffffff;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.navbar-nav {
+    font-size: 1.1rem;
+}
+
+.nav-link {
+    color: #331cdf;
+    margin: 0 25px;;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: #007bff; /* Change to your preferred hover color */
+}
+
+.navbar-toggler {
+    background-color: transparent; /* Set to the desired background color */
+    margin-right: 10px;
+    border: none; /* Remove the border */
+    outline: none; /* Remove the outline */
+}
+
+.navbar-toggler-icon {
+    background-color: #ffffff; /* Set to the desired background color */
+    border-radius: 4px; /* Add border radius for a button-like appearance */
+}
+
+/* Add smooth animation when the toggle button is clicked */
+.navbar-toggler:focus {
+    outline: none; /* Remove focus outline */
+    background-color: #fff; /* Set to the desired background color */
+    transform: scale(1.5); /* Add a scale transform for a smooth animation */
+}
+
+.apply-button {
+    margin-left: 15px;
+}
+
+/* Active link */
+.nav-item.active .nav-link {
+    color: #007bff; /* Change to your preferred active link color */
+}
+
+/* Responsive navbar */
+@media (max-width: 768px) {
+    .navbar-nav {
+        flex-direction: column;
+    }
+
+    .nav-item {
+        text-align: center;
+        margin: 10px 0;
+    }
+
+    .apply-button {
+        margin-left: 0;
+        margin-top: 15px;
+    }
+}
+
+.navbar-nav li.nav-item a.nav-link {
+    font-size: 18px; /* Adjust the font size as needed */
+}
+/* Custom CSS for smaller screens (mobile) */
+@media (max-width: 768px) {
+
+}
+.navbar-nav .nav-link {
+    position: relative;
+    transition: all 0.3s ease-in-out;
+}
+
+.navbar-nav .nav-link::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #007bff; /* Change to your desired link color */
+    transition: all 0.3s ease-in-out;
+}
+
+.navbar-nav .nav-link:hover::before {
+    width: 100%;
+}
+
+/* Custom CSS for social media links on top */
+.social-icons-top {
+    position: absolute;
+    top: 0px;
+    right: 500px;
+    display: flex;
+    gap: 10px;
+}
+.social-icons-top a.nav-link {
+    font-size: 24px;
+    color: #000; /* Change the color as needed */
+}
+
+/* Add circular background to social icons */
+.social-icon-link {
+    display: inline-block;
+    background-color: white; /* Background color for the circle */
+    width: 40px; /* Adjust the width and height as needed */
+    height: 40px;
+    border-radius: 50%; /* Makes it a circle */
+    text-align: center;
+    line-height: 40px; /* Vertically centers the icon */
+}
+
+/* Style the icon color (you can customize the color) */
+.social-icon-link i {
+    color: #007bff; /* Change the color to your desired icon color */
+    font-size: 20px; /* Adjust the font size as needed */
+}
+
+/* Add a hover effect (blue color on mouse-over) */
+.social-icon-link:hover {
+    background-color: #007bff; /* Add a hover color */
+}
+
+.social-icon-link:hover i {
+    color: #fff; /* Change the icon color on hover */
+}
+
+/* Custom CSS for social media links on bottom */
+.social-icons-bottom {
+    position: absolute;
+    bottom: 0px;
+    right: 500px;
+    display: flex;
+    gap: 10px;
+}
+.social-icons-bottom a.nav-link {
+    font-size: 24px;
+    color: #000; /* Change the color as needed */
+}
+
+/* Add circular background to social icons */
+.social-icon-link {
+    display: inline-block;
+    background-color: white; /* Background color for the circle */
+    width: 40px; /* Adjust the width and height as needed */
+    height: 40px;
+    border-radius: 50%; /* Makes it a circle */
+    text-align: center;
+    line-height: 40px; /* Vertically centers the icon */
+}
+
+/* Add this custom CSS to your styles.css or a separate CSS file */
+.sidebar-nav.collapse {
+    position: fixed;
+    top: 0;
+    left: -250px; /* Initial position off-screen to the left */
+    width: 250px; /* Adjust as needed */
+    height: 100%;
+    background-color: #fff; /* Background color of the sidebar */
+    transition: left 0.3s ease-in-out; /* Animation duration and easing */
+}
+
+.sidebar-nav.show {
+    left: 0; /* Slide in from the left */
+}

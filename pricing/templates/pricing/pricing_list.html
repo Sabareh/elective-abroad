@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Program Pricing{% endblock %}
+
+{% block content %}
+<div class="container mt-4"style="padding-top: 130px;" >
+    <!-- Include Navigation Bar -->
+
+    <h1 class="text-center mb-4">Program Pricing</h1>
+
+    <div class="row">
+        {% for program in programs %}
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img src="{{ program.image.url }}" class="card-img-top" alt="{{ program.title }}">
+                <div class="card-body">
+                    <h5 class="card-title">{{ program.title }}</h5>
+                    <p class="card-text">{{ program.description }}</p>
+                    <p class="card-text"><strong>Location:</strong> {{ program.location }}</p>
+                    <p class="card-text"><strong>Start Date:</strong> {{ program.start_date }}</p>
+                    <p class="card-text"><strong>End Date:</strong> {{ program.end_date }}</p>
+                    <p class="card-text"><strong>Capacity:</strong> {{ program.capacity }}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %} 
+    </div>
+</div>
+{% endblock %}
+

@@ -1,0 +1,120 @@
+{% extends "base.html" %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/contact_form.css' %}">
+<link rel="stylesheet" href="{% static 'assets/bootstrap/css/bootstrap.min.css' %}">
+<link rel="stylesheet" href="{% static 'assets/css/Contact-Details-icons.css' %}">
+<link rel="stylesheet" href="{% static 'bootstrap_icons/css/bootstrap_icons.css' %}">
+<link rel="stylesheet" href="{% static 'assets/css/styles.css' %}">
+
+
+{% block content %}
+<div class="container form-container mx-auto mt-5" >
+    <div class="row">
+        <!-- Contact Information Section -->
+        <div class="col-lg-6 rounded">
+            <h1 class="text-center" style="color: #191E7C;"><strong>Contact Us</strong></h1>
+            <div class="row mt-4">
+                <div class="col-12 mb-4">
+                    <div class="text-center contact-info-box">
+                        <i class="fas fa-map-marker-alt fa-2x" style="color: #191E7C;"></i>
+                        <h3><a href="https://maps.app.goo.gl/FvkMaRbVLCJddkFy7">128 City Road, London EC1V 2NX, London, United Kingdom</a></h3>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-12 mb-4">
+                    <div class="text-center contact-info-box">
+                        <i class="fas fa-phone fa-2x" style="color: #191E7C;"></i>
+                        <h3><a href="tel:+17032341219">+1-703-234-1219</a></h3>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-12 mb-4">
+                    <div class="text-center contact-info-box">
+                        <i class="fas fa-envelope fa-2x" style="color: #191E7C;"></i>
+                        <h3><a href="mailto:info@electiveabroad.com">info@electiveabroad.com</a></h3>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-12 mb-4">
+                    <div class="text-center contact-info-box">
+                        <i class="fas fa-globe fa-2x" style="color: #191E7C;"></i>
+                        <h3><a href="http://www.electiveabroad.com" target="_blank">www.electiveabroad.com</a></h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Contact Form Section -->
+        <div class="col-lg-6 rounded">
+            <div class="bg-light p-4 rounded" style="box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;">
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ form.non_field_errors }}                  
+                    <!-- Form Inputs -->
+                    <div class="mb-3">
+                        <label for="{{ form.first_name.id_for_label }}" class="form-label"><b>First Name</b></label>
+                        <input type="text" class="form-control" id="{{ form.first_name.id_for_label }}" name="{{ form.first_name.name }}" placeholder="Enter your first name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="{{ form.last_name.id_for_label }}" class="form-label"><b>Last Name</b></label>
+                        <input type="text" class="form-control" id="{{ form.last_name.id_for_label }}" name="{{ form.last_name.name }}" placeholder="Enter your last name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="{{ form.email.id_for_label }}" class="form-label"><b>Email</b></label>
+                        <input type="email" class="form-control" id="{{ form.email.id_for_label }}" name="{{ form.email.name }}" placeholder="Enter your email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="{{ form.phone.id_for_label }}" class="form-label"><b>Phone</b></label>
+                        <input type="tel" class="form-control" id="{{ form.phone.id_for_label }}" name="{{ form.phone.name }}" placeholder="Enter your phone number" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="{{ form.institution.id_for_label }}" class="form-label"><b>Institution</b></label>
+                        <input type="text" class="form-control" id="{{ form.institution.id_for_label }}" name="{{ form.institution.name }}" placeholder="Enter your institution" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="{{ form.program.id_for_label }}" class="form-label"><b>Program</b></label>
+                        <input type="text" class="form-control" id="{{ form.program.id_for_label }}" name="{{ form.program.name }}" placeholder="Enter your program" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="{{ form.how_did_you_hear.id_for_label }}" class="form-label"><b>How did you hear about us?</b></label>
+                        <input type="text" class="form-control" id="{{ form.how_did_you_hear.id_for_label }}" name="{{ form.how_did_you_hear.name }}" placeholder="Enter how you heard about us" required>
+                    </div>
+                    <!-- File Uploads -->
+                    <div class="mb-3">
+                        <label for="{{ form.passport.id_for_label }}" class="form-label"><b>Passport Upload</b></label>
+                        <input type="file" multiple class="form-control" id="{{ form.passport.id_for_label }}" name="{{ form.passport.name }}" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="{{ form.cv.id_for_label }}" class="form-label"><b>CV Upload</b></label>
+                        <input type="file" multiple class="form-control" id="{{ form.cv.id_for_label }}" name="{{ form.cv.name }}" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="{{ form.transcript.id_for_label }}" class="form-label"><b>Transcript Upload</b></label>
+                        <input type="file" multiple class="form-control" id="{{ form.transcript.id_for_label }}" name="{{ form.transcript.name }}" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="{{ form.inquiry.id_for_label }}" class="form-label"><b>Anything Else?</b></label>
+                        <textarea class="form-control" id="{{ form.inquiry.id_for_label }}" name="{{ form.inquiry.name }}" rows="4" placeholder="Enter your inquiry" required></textarea>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Add the feather icon library -->
+<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+<script>
+    feather.replace();
+</script>
+<script src="{% static 'assets/js/jquery.min.js' %}"></script>
+<script src="{% static 'assets/bootstrap/js/bootstrap.min.js' %}"></script>
+
+
+{% endblock %}

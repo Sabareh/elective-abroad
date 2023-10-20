@@ -1,0 +1,33 @@
+<!-- templates/blog/blog_post_detail.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ blog_post.title }}</title>
+</head>
+<body>
+    <h1>{{ blog_post.title }}</h1>
+    <p>Published on: {{ blog_post.pub_date }}</p>
+    <p>{{ blog_post.content }}</p>    
+
+    <h2>Comments</h2>
+    <ul>
+        {% for comment in comments %}
+            <li>
+                <p>{{ comment.author_name }} says:</p>
+                <p>{{ comment.comment_text }}</p>
+                <p>Commented on: {{ comment.pub_date }}</p>
+            </li>
+        {% empty %}
+            <p>No comments yet.</p>
+        {% endfor %}
+    </ul>
+
+    <h3>Add a Comment</h3>
+    <form method="post" action="{% url 'blog:comment_view' blog_post.pk %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
+

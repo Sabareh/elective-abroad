@@ -1,5 +1,8 @@
 {% extends 'base.html' %}
 {% load static %}
+
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
 {% block title %}Elective Abroad - Home{% endblock %}
 
 {% block content %}
@@ -121,12 +124,12 @@
             </nav>
             
             <!-- Carousel -->
-            <div class="jumbotron text-center text-white position-relative" style="background-image: url('{% static 'images/image-2.jpg' %}'); background-size: cover; background-position: center; min-height: 60vh;">
+            <div class="jumbotron text-center text-white position-relative rounded" style="background-image: url('{% static 'images/image-2.jpg' %}'); background-size: cover; background-position: center; min-height: 60vh;">
                 <div style="background-color: rgba(0, 0, 0, 0.5); position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></div>
                     <div class="position-absolute top-50 start-50 translate-middle" style="z-index: 1;">
                         <div class="container">
                         <h1 class="display-4" style="font-weight: bold;">An experience of a lifetime</h1>
-                        <a class="btn btn-primary btn-lg mt-3" href="/contact/" role="button">Apply Now</a>
+                        <a class="btn btn-primary btn-lg mt-3" href="/contact/" role="button">Get Started</a>
                     </div>
                 </div>
             </div>
@@ -145,38 +148,45 @@
             </div>
         </div>
  
-        <!-- Section 2: Program Pricing -->
-        <div class="row mt-4">
-            <div class="col-md-6 text-center text-md-start">
-                <h2>Program Pricing</h2>
-                <p>At Elective Abroad, we prioritize affordability because we understand that pursuing your dreams shouldn't break the bank. Our pricing structure is designed to be competitive, ensuring that you receive exceptional value for your investment in your education and international elective program.</p>
-                <p>Transparency is at the core of our pricing philosophy. We believe that you should always know exactly what you're paying for, and that's why we have a commitment to no hidden fees. When you choose Elective Abroad, you can trust that the price you see is the price you pay.</p>
-                
-                <div class="text-center">
-                    <a class="btn btn-primary btn-sl mt-3" href="/pricing/" role="button">View Pricing</a>
-                </div>
+            <!-- Section 2: Program Pricing -->
+            <div class="row mt-4">
+                    <div class="col-md-6 text-center text-md-start">
+                        <h2 class="text-center">Program Pricing</h2>
+                        <p>At Elective Abroad, we prioritize affordability because we understand that pursuing your dreams shouldn't break the bank. Our pricing structure is designed to be competitive, ensuring that you receive exceptional value for your investment in your education and international elective program.</p>
+                        <p>Transparency is at the core of our pricing philosophy. We believe that you should always know exactly what you're paying for, and that's why we have a commitment to no hidden fees. When you choose Elective Abroad, you can trust that the price you see is the price you pay.</p>
+                        <div class="text-center">
+                            <a class="btn btn-primary btn-sl mt-3" href="/pricing/" role="button">View Pricing</a>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 rounded">
+                        <div class="image-container rounded">
+                            <img src="static/images/image-4.jpg" alt="Image 2" class="img-fluid rounded img-zoom h-100" style="max-height: 60vh" />
+                        </div>
+                    </div>
             </div>
-            <div class="col-md-6" style="padding: 10px;">
-                <img src="static/images/image-4.jpg" alt="Image 2" class="img-fluid rounded img-zoom" />
-            </div>
-        </div>
 
-        <!-- Section 3: Stay Informed with Our Blog -->
-        <div class="row mt-4">
-            <div class="col-md-6 text-center text-md-start" style="padding-bottom: 10px;">
-                <h2>Stay Informed with Our Blog</h2>
-                <p>Our blog keeps you updated on elective programs and travel tips. Read informative articles about elective opportunities, discover experiences shared by students who've traveled with us, and get travel tips, cultural insights, and destination highlights. Stay connected with us through our blog to make the most of your elective journey.</p>
-                <div class="text-center">
-                    <a class="btn btn-primary btn-sl mt-3" href="/blog/" role="button">Read Blog</a>
-                </div>
+            <!-- Section 3: Stay Informed with Our Blog -->
+            <div class="row mt-4">
+                    <div class="col-md-6 text-center text-md-start">
+                        <h2 class="text-center">Stay Informed with Our Blog</h2>
+                        <p>Our blog keeps you updated on elective programs and travel tips. Read informative articles about elective opportunities, discover experiences shared by students who've traveled with us, and get travel tips, cultural insights, and destination highlights. Stay connected with us through our blog to make the most of your elective journey.</p>
+                        <div class="text-center">
+                            <a class="btn btn-primary btn-sl mt-3" href="/blog/" role="button">Read Blog</a>
+                        </div>
+                    </div>
+                
+                    <div class="col-md-6">
+                    <!-- Image container -->
+                        <div class="image-container">
+                            <img src="static/images/image-3.jpg" alt="Image 3" class="img-fluid rounded img-zoom h-100" style="max-height: 60vh"/>
+                        </div>
+                    </div>
             </div>
-            <div class="col-md-6" style="padding: 10px;">
-                <img src="static/images/image-3.jpg" alt="Image 3" class="img-fluid rounded img-zoom" />
-            </div>
-        </div>
+
 
         <!-- Section 4: Testimonials and Success Stories -->
-        <div class="row mt-4">
+        <div class="row mt-4 ">
             <div class="col-md-12 text-center">
                 <h2>What Our Participants Say</h2>
             </div>
@@ -184,91 +194,109 @@
                 
         <div class="row mt-4">
             <div class="col-md-4">
-                <div class="card testimonial-card">
-                    <div class="card-body">
-                        <h5 class="card-title">Cassanne Eccleston, Charles Sturt University Australia</h5>
-                        <img src="static/images/images/chris.jpg" alt="John Doe" class="img-fluid rounded-circle testimonial-img">
-                        <p class="card-text">"Doing a medical elective in Kenya was an eye opening experience. I got to see the developing world health system and range of tropical diseases not normally prevalent in Australia. I got to learn and perform skills like administering injections, catheters and suturing patients. I was also able to take part in the examining, differentials, diagnosing and formulating treatment plans. The highlight for me would have to be the amazing new friends I have made and the motivation I have taken back home. I would recommend this program to anyone considering it."</p>
+                <div class="card testimonial-card h-100 border-0" style="box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;;">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Drew Hulse , Kansas , United States </h5>
+                        <img src="static/images/images/drew.jpg" alt="Drew Hulse" class="img-fluid rounded-circle" style="width: 100px; height: 100px;"/>
+                        <p class="card-text">"Overall the experience I`ve had in Mombasa and with the other students has been memorable. I have made some great new friends and will hopefully be able to visit them when we all return back to the states.” it lovers be warmly by. Little do it eldest former be if. sentiments insipidity inhabiting in. Off melancholy alteration principles old. Is do speedily kindness properly oh. Respect article painted cottage he is offices parlors."</p>
                     </div>
                 </div>
             </div>
                     
             <div class="col-md-4">
-                <div class="card testimonial-card">
-                    <div class="card-body">
+                <div class="card testimonial-card h-100 border-0" style="box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;" >
+                    <div class="card-body text-center">
                         <h5 class="card-title">Ida W. Bjorntvedt , Oslo , Norway </h5>
-                        <img src="static/images/images/jane-smith.jpg" alt="Jane Smith" class="img-fluid rounded-circle testimonial-img">
-                        <p class="card-text">"Elective Abroad offers more than just medical placements. It's a cultural adventure that enhances your perspective. I volunteered in Tanzania and had the chance to explore the local culture and traditions. The team's commitment to making the experience unforgettable is truly commendable."</p>
+                        <img src="static/images/images/ida.jpg" alt="Ida W. Bjorntvedt" class="img-fluid rounded-circle" style="width: 100px; height: 100px;"/>
+                        <p class="card-text">"Elective Abroad is a highly educative program for all medical students. If you have special interests in fields like Obsterics/gyn, general surgery and tropical medicine this is a very good program. The experience I had in Mombasa has been memorable and I highly recommend ElectiveAbroad to anyone considering applying."</p>
                     </div>
                 </div>
             </div>
                 
             <div class="col-md-4">
-                <div class="card testimonial-card">
-                    <div class="card-body">
-                        <h5 class="card-title">Dr. David Johnson</h5>
-                        <img src="static/images/images/dr-david.jpg" alt="Dr. David Johnson" class="img-fluid rounded-circle testimonial-img">
-                        <p class="card-text">"As a volunteer doctor, I was impressed by the facilities and the level of support provided by Elective Abroad. My time in Zambia allowed me to make a meaningful impact on the local community. The program is well-structured and enriching for medical professionals."</p>
+                <div class="card testimonial-card h-100 border-0" style="box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Michelle Carey,Leigh-on-Sea </h5>
+                        <img src="static/images/images/michelle.jpg" alt="Michelle Carey" class="img-fluid rounded-circle" style="width: 100px; height: 100px;"/>
+                        <p class="card-text">"I want to say I think it is a fantastic program …I did the senior program so what I wanted out of an African elective program was plenty of hands on experience and to get the opportunity to see tropical / unusual diseases we would not see in the UK. And I got both of these. Coast is a brilliant hospital to be placed at. It probably helps that it is a teaching hospital, so many Kenyan students were there too, but it means you get taught by knowledgeable, enthusiastic and relevant staff."</p>
                     </div>
                 </div>
             </div>
         </div>
+
+        <!-- Section 5: Our Partners -->
+<div class="row mt-4" id="partners">
+    <div class="col-md-12 text-center">
+        <h2>Our Partners</h2>
     </div>
 </div>
 
-<!-- CSS for the carousel overlay -->
-<style>
-    .nav-link-box {
-        border: 1px solid #ccc;
-        border-bottom: none;
-        padding: 5px 5px;
-        display: flex;
-        align-items: center;
-    }
+<div class="row mt-4 rounded">
+    <div class="col-md-3">
+        <!-- Partner 1 -->
+        <div class="partner-logo text-center">
+            <img src="static/images/amsa.png" alt="Partner 1 Logo" class="img-fluid" />
+        </div>
+    </div>
 
-    .nav-box {
-        border: 1px solid #ddd;
-        margin: 6px;
-        border-bottom: none;
-    }
+    <div class="col-md-3">
+        <!-- Partner 2 -->
+        <div class="partner-logo text-center">
+            <img src="static/images/amsa2.png" alt="Partner 2 Logo" class="img-fluid" />
+        </div>
+    </div>
 
-    .nav-box:hover {
-        background: 2px solid #007BFF;
-    }
+    <div class="col-md-3">
+        <!-- Partner 3 -->
+        <div class="partner-logo text-center">
+            <img src="static/images/umsa.png" alt="Partner 3 Logo" class="img-fluid" />
+        </div>
+    </div>
 
-     .testimonial-card {
-        opacity: 0;
-        transform: translateY(20px);
-        transition: opacity 0.5s, transform 0.5s;
-    }
+    <div class="col-md-3">
+        <!-- Partner 4 -->
+        <div class="partner-logo text-center">
+            <img src="static/images/emsa.png" alt="Partner 4 Logo" class="img-fluid" />
+        </div>
+    </div>
+</div>
 
-    .testimonial-card.show {
-        opacity: 1;
-        transform: translateY(0);
-    }
-</style>
+<!-- Section 6: Key Program Features -->
+<div class="row mt-4" id="features">
+    <div class="col-md-12 text-center">
+        <h2>Key Program Features</h2>
+    </div>
+</div>
 
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        let testimonials = document.querySelectorAll(".testimonial-card");
-        let windowHeight = window.innerHeight;
+<div class="row mt-4">
+    <div class="col-md-4">
+        <div class="card h-100 border-0" style="box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;">
+            <div class="card-body text-center">
+                <h5 class="card-title">Types of Placements</h5>
+                <p class="card-text">Our programs offer a wide range of placements, including Internal Medicine, Dentistry, Surgery, and more. You can choose the specialty that aligns with your career goals.</p>
+            </div>
+        </div>
+    </div>
 
-        function animateTestimonials() {
-            testimonials.forEach(function (testimonial) {
-                let bounding = testimonial.getBoundingClientRect();
-                if (bounding.top >= 0 && bounding.top <= windowHeight) {
-                    testimonial.classList.add("show");
-                }
-            });
-        }
+    <div class="col-md-4">
+        <div class="card h-100 border-0" style="box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;">
+            <div class="card-body text-center">
+                <h5 class="card-title">Program Duration</h5>
+                <p class="card-text">You can select the program duration that suits your schedule. Whether you're looking for short-term experiences or extended placements, we have options for you.</p>
+            </div>
+        </div>
+    </div>
 
-        window.addEventListener("scroll", animateTestimonials);
-        window.addEventListener("resize", animateTestimonials);
-
-        // Initial check to show testimonials if already in the viewport
-        animateTestimonials();
-    });
-</script>
+    <div class="col-md-4">
+        <div class="card h-100 border-0" style="box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;">
+            <div class="card-body text-center">
+                <h5 class="card-title">Operating Countries</h5>
+                <p class="card-text">We operate in multiple African countries, including Kenya, Tanzania, Zambia, and Malawi. Explore different healthcare systems and cultures across these destinations.</p>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
 
 {% endblock %}
 

@@ -58,6 +58,21 @@ $(document).ready(function () {
 
 AOS.init();
 
+var exitPopup = document.getElementById("exit-popup");
+var exitPopupClose = document.getElementById("exit-popup-close");
+
+// Add an event listener for mouseleave to detect exit intent.
+document.addEventListener("mouseleave", function (e) {
+  if (e.clientY <= 0) {
+    // Show the exit-intent pop-up when the mouse leaves the top of the viewport.
+    exitPopup.style.display = "block";
+  }
+});
+
+// Add an event listener to close the pop-up.
+exitPopupClose.addEventListener("click", function () {
+  exitPopup.style.display = "none";
+});
 
 
 

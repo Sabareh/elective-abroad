@@ -23,6 +23,10 @@ def blog_post_list(request):
 def blog_post_detail(request, pk):
     blog_post = get_object_or_404(BlogPost, pk=pk)
     comments = blog_post.comments.all()
+    
+    # Retrieve the previous blog post based on publication date
+    previous_blog_post = BlogPost.objects.filter(pub_date__lt=blog_post.pub_date).order_by('-pub_date').first()
+
     if request.method == 'POST':
         form = CommentForm(request.POST)
         if form.is_valid():
@@ -32,8 +36,14 @@ def blog_post_detail(request, pk):
             return redirect('blog:blog_post_detail', pk=pk)
     else:
         form = CommentForm()
-    return render(request, 'blog/blog_post_detail.html', {'blog_post': blog_post, 'comments': comments, 'form': form})
 
+    return render(request, 'blog/blog_post_detail.html', {
+        'blog_post': blog_post,
+        'comments': comments,
+        'form': form,
+        'previous_blog_post': previous_blog_post,  # Include the previous_blog_post in the context
+    })
+    
 def comment_view(request, pk):
     comment = get_object_or_404(Comment, pk=pk)
     return render(request, 'blog/comment_form.html', {'comment': comment})

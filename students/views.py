@@ -5,6 +5,10 @@ def home(request):
     # Your view logic here
     return render(request, 'home.html')
 
+def about_us(request):
+    # Your view logic here
+    return render(request, 'about-us.html')
+    
 def student_profile(request, student_id):
     student = StudentProfile.objects.get(pk=student_id)
     return render(request, 'students/student_profile.html', {'student': student})  

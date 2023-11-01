@@ -26,7 +26,9 @@ class BlogPost(models.Model):
     
     def total_likes(self):
         return self.likes.count()
-   
+    
+
+    
 class Comment(models.Model):
     blog_post = models.ForeignKey(BlogPost, on_delete=models.CASCADE, related_name='comments')
     author_name = models.CharField(max_length=100)

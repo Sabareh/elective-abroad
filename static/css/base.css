@@ -172,3 +172,11 @@
 .sidebar-nav.show {
     left: 0; /* Slide in from the left */
 }
+
+.footer-bg {
+    background-image: url("static\images\footer-background.jpg"); /* Replace 'path-to-your-image.jpg' with the actual path to your background image */
+    background-size: cover;
+    background-position: center;
+    color: #fff; /* Text color for the footer content */
+    padding: 20px 0; /* Adjust the padding as needed */
+}

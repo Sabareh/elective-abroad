@@ -1,35 +1,36 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block title %}Program Details - Elective Abroad{% endblock %}
+
+{ link rel="stylesheet" href="{% static 'css/program_detail.css' %}" %}
+{ link rel="js" href="{% static 'js/program_detail.js' %}" %}
+
+{% block title %}Program Detail - Elective Abroad{% endblock %}
 
 {% block content %}
-<div class="container mt-4" style="padding-top: 130px;">
+<div class="container mt-4">
     <div class="row">
-        <div class="col-md-8">
-            <h1>{{ program.name }}</h1>
-            <p><strong>Location:</strong> {{ program.category.city.name }}, {{ program.category.country.name }}</p>
-            <p><strong>Dates:</strong> {{ program.start_date }} - {{ program.end_date }}</p>
-            <p><strong>Capacity:</strong> {{ program.capacity }} students</p>
-            <img src="{% static program.image.url %}" class="img-fluid" alt="{{ program.name }}">
-            <p>{{ program.description }}</p>
+        <div class="col-md-12 text-center">
+            <h1 class="display-4"><strong>{{ program.name }}</strong></h1>
         </div>
-        <div class="col-md-4">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Apply Now</h5>
-                    <form method="post" enctype="multipart/form-data">
-                        {% csrf_token %}
-                        {{ form.non_field_errors }}
-                        <div class="mb-3">
-                            <label for="{{ form.first_name.id_for_label }}" class="form-label"><b>First Name</b></label>
-                            <input type="text" class="form-control" id="{{ form.first_name.id_for_label }}" name="{{ form.first_name.name }}" placeholder="Enter your first name" required>
-                        </div>
-                        <!-- Add other form fields as needed -->
-                        <button type="submit" class="btn btn-primary btn-block">Submit Application</button>
-                    </form>
-                </div>
-            </div>
+    </div>
+    <div class="row mt-4">
+        <div class="col-md-4 h-100">
+            <img src="{% static program.image.url %}" class="img-fluid rounded" alt="{{ program.name }}">
+        </div>
+        <div class="col-md-8 h-100">
+            <p><strong>Location:</strong> {{ program.location }}</p>
+            <p><strong>Description:</strong> {{ program.description }}</p>
+            <p><strong>Category:</strong> {{ program.category.name }}</p>
+            <p><strong>Dates:</strong> {{ program.start_date }} - {{ program.end_date }}</p>
+            <p><strong>Duration:</strong> {{ program.duration }} days</p>
+            <p><strong>Capacity:</strong> {{ program.capacity }} students</p>
+        </div>
+    </div>
+    <div class="col md-8" style="padding-bottom: 10px">
+        <div class="col-md-12 text-center">
+            <a href="{% url 'programs:explore_programs' %}" class="btn btn-primary">Back to Program List</a>
+            <a href="/contact/" class="btn btn-primary">Apply Now</a>
         </div>
     </div>
 </div>

@@ -31,10 +31,12 @@
                 </div>
             </div>
             <!-- Main Content -->
-            <div class="col-lg-9 text-center">
-                <h1>{{ blog_post.title }}</h1>
-                <p>Published on: {{ blog_post.pub_date }}</p>
-                <p>{{ blog_post.content }}</p>
+            <div class="col-lg-9">
+                <h1 class="text-center">{{ blog_post.title }}</h1>
+                <p class="text-center">Published on: {{ blog_post.pub_date }}</p>
+                
+                <!-- Use the safe filter to render HTML content from CKEditor -->
+                <p>{{ blog_post.content|safe }}</p>
 
                 <h2 class="mt-4">Comments</h2>
                 <ul class="list-group">

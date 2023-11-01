@@ -26,4 +26,4 @@ def elective_facilities(request):
 def program_detail(request, program_id):
     # Fetch program details
     program = get_object_or_404(Program, id=program_id)
-    return render(request, 'program_detail.html', {'program': program})
+    return render(request, 'programs/program_detail.html', {'program': program})

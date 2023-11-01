@@ -1,20 +1,33 @@
-<!-- destinations/templates/destinations/destination_list.html -->
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Destinations</title>
-</head>
-<body>
-    <h1>List of Destinations</h1>
-    <ul>
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Destinations{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="row text-center">
+        <div class="col-12">
+            <h1 class="display-4"><strong>Destinations List</strong></h1>
+        </div>
+    </div>
+    <div class="row mt-4">
         {% for destination in destinations %}
-            <li>
-                <h2>{{ destination.name }}</h2>
-                <p>{{ destination.description }}</p>
-                <img src="{{ destination.image.url }}" alt="{{ destination.name }}">
-                
-            </li>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="{% static destination.image.url %}" class="card-img-top" alt="{{ destination.title }}">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ destination.title }}</h5>
+                        <p class="card-text">{{ destination.description|truncatechars:100 }}</p>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><strong>Location:</strong> {{ destination.location }}</li>
+                    </ul>
+                    <div class="card-body">
+                        <a href="{% url 'destinations:destination_detail' destination.id %}" class="btn btn-primary btn-block">Learn More</a>
+                    </div>
+                </div>
+            </div>
         {% endfor %}
-    </ul>
-</body>
-</html>
+    </div>
+</div>
+{% endblock %}

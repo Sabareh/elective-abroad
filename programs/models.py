@@ -16,21 +16,23 @@ class ProgramCategory(models.Model):
 class Program(models.Model):
     name = models.CharField(max_length=255)
     description = models.TextField()
+    location = models.CharField(max_length=255)
     category = models.ForeignKey(ProgramCategory, on_delete=models.CASCADE)
     image = models.ImageField(upload_to='images/')
     created_at = models.DateTimeField(default=timezone.now)
     updated_at = models.DateTimeField(auto_now=True)
+    start_date = models.DateField()
+    end_date = models.DateField()
+    duration = property(lambda self: (self.end_date - self.start_date).days)
     is_active = models.BooleanField(default=False)
     is_deleted = models.BooleanField(default=False)
     capacity = models.IntegerField(default=0)
-
 
     def __str__(self):
         return self.name
 
 class Country(models.Model):
     name = models.CharField(max_length=255)
-
 
     def __str__(self):
         return self.name

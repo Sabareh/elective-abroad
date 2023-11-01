@@ -6,3 +6,4 @@ urllib3==1.26.6
 django_bootstrap5
 django-4-jet
 google-api-python-client==1.4.1
+django-ckeditor

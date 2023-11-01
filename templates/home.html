@@ -1,296 +1,223 @@
 {% extends 'base.html' %}
 {% load static %}
 
+
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
 {% block title %}Elective Abroad - Home{% endblock %}
 
 {% block content %}
-<div class="container">
-    <!-- Sidebar -->
-    <div class="row mt-4">
-        <div class="col-md-3 d-none d-md-block ">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">
-                        <i class="fa-solid fa-share-nodes fa-xl"></i> Quick Links
-                    </h5>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item ">
-                            <a href="/contact/" style="text-decoration: none;"><i class="fas fa-globe"></i> Destinations</a>
+<!--sidebar-->
+<div class="row">
+    <div class="col p-2 d-none d-md-block">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">
+                    <i class="fa-solid fa-share-nodes fa-xl"></i> Quick Links
+                </h5>
+                    
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item ">
+                        <a href="/contact/" style="text-decoration: none;"><i class="fas fa-globe"></i> Destinations</a>
+                    </li>
+                    <li class="list-group-item ">
+                        <a href="/contact/" style="text-decoration: none;"><i class="fas fa-dollar-sign"></i> Pricing</a>
+                    </li>
+                    <li class="list-group-item ">
+                        <a href="/blog/" style="text-decoration: none;"><i class="fas fa-newspaper"></i> Blog</a>
+                    </li>
+                    <li class="list-group-item ">
+                        <a href="/contact/" style="text-decoration: none;"><i class="fas fa-envelope"></i> Contact Us</a>
+                    </li>
+                    <li class="list-group-item ">
+                        <a href="/programs/" style="text-decoration: none;"><i class="fas fa-book"></i> Programs</a>
+                    </li>
+                    <li class="list-group-item ">
+                        <a href="/contact/" style="text-decoration: none;"><i class="fas fa-university"></i> Placement Institutions</a>
+                    </li>
+                    <li class="list-group-item ">
+                        <a href="/contact/" style="text-decoration: none;"><i class="fas fa-file-alt"></i> How to Apply</a>
+                    </li>
+                    <li class="list-group-item ">
+                        <a href="/contact/" style="text-decoration: none;"><i class="fas fa-building"></i> Facilities</a>
+                    </li>
+                    <li class="list-group-item ">
+                        <a href="/contact/" style="text-decoration: none;"><i class="fas fa-graduation-cap"></i> Academic Institutions</a>
+                    </li>
+                    <li class="list-group-item ">
+                        <a href="/contact/" style="text-decoration: none;"><i class="fas fa-bed"></i> Accommodation</a>
+                    </li>
+                    <li class="list-group-item ">
+                        <a href="/contact/" style="text-decoration: none;"><i class="fas fa-passport"></i> Visa</a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/contact/" style="text-decoration: none;"><i class="fas fa-hiking"></i> Excursions</a>
+                    </li>
+                    <li class="list-group-item ">
+                        <a href="/faq/" style="text-decoration: none;"><i class="fas fa-question-circle"></i> FAQ</a>
+                    </li>
+                    <li class="list-group-item ">
+                        <a href="/about-us/" style="text-decoration: none;"><i class="fas fa-info-circle"></i> About Us</a>
+                    </li>
+                    <li class="list-group-item ">
+                        <a href="/contact/" style="text-decoration: none;"><i class="fas fa-users"></i> Mentors</a>
+                    </li>
+                    <li class="list-group-item ">
+                        <a href="/contact/" style="text-decoration: none;"><i class="fas fa-guitar"></i> Cultural Activities</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="col-md-9 p-2 d-block h-100 d-flex flex-column">
+        <div class="d-none d-md-block h-100">
+            <nav class="navbar navbar-expand text-center">
+                <div class="collapse navbar-collapse">
+                    <ul class="nav nav-tabs justify-content-center flex-column flex-sm-row">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#overview">
+                                <div class="text-center">
+                                    Overview
+                                </div>
+                            </a>
                         </li>
-                        <li class="list-group-item ">
-                            <a href="/contact/" style="text-decoration: none;"><i class="fas fa-dollar-sign"></i> Pricing</a>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#photos">
+                                <div class="text-center">
+                                    Photos
+                                </div>
+                            </a>
                         </li>
-                        <li class="list-group-item ">
-                            <a href="/contact/" style="text-decoration: none;"><i class="fas fa-newspaper"></i> Blog</a>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#facilities">
+                                <div class="text-center">
+                                    Hospitals/Facilities
+                                </div>
+                            </a>
                         </li>
-                        <li class="list-group-item ">
-                            <a href="/contact/" style="text-decoration: none;"><i class="fas fa-envelope"></i> Contact Us</a>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#departments">
+                                <div class="text-center">
+                                    Department
+                                </div>
+                            </a>
                         </li>
-                        <li class="list-group-item ">
-                            <a href="/programs/" style="text-decoration: none;"><i class="fas fa-book"></i> Programs</a>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/faq/">
+                                <div class="text-center">
+                                    Q&As
+                                </div>
+                            </a>
                         </li>
-                        <li class="list-group-item ">
-                            <a href="/contact/" style="text-decoration: none;"><i class="fas fa-university"></i> Placement Institutions</a>
-                        </li>
-                        <li class="list-group-item ">
-                            <a href="/contact/" style="text-decoration: none;"><i class="fas fa-file-alt"></i> How to Apply</a>
-                        </li>
-                        <li class="list-group-item ">
-                            <a href="/contact/" style="text-decoration: none;"><i class="fas fa-building"></i> Facilities</a>
-                        </li>
-                        <li class="list-group-item ">
-                            <a href="/contact/" style="text-decoration: none;"><i class="fas fa-graduation-cap"></i> Academic Institutions</a>
-                        </li>
-                        <li class="list-group-item ">
-                            <a href="/contact/" style="text-decoration: none;"><i class="fas fa-bed"></i> Accommodation</a>
-                        </li>
-                        <li class="list-group-item ">
-                            <a href="/contact/" style="text-decoration: none;"><i class="fas fa-passport"></i> Visa</a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="/contact/" style="text-decoration: none;"><i class="fas fa-hiking"></i> Excursions</a>
-                        </li>
-                        <li class="list-group-item ">
-                            <a href="/faq/" style="text-decoration: none;"><i class="fas fa-question-circle"></i> FAQ</a>
-                        </li>
-                        <li class="list-group-item ">
-                            <a href="/contact/" style="text-decoration: none;"><i class="fas fa-info-circle"></i> About Us</a>
-                        </li>
-                        <li class="list-group-item ">
-                            <a href="/contact/" style="text-decoration: none;"><i class="fas fa-users"></i> Mentors</a>
-                        </li>
-                        <li class="list-group-item ">
-                            <a href="/contact/" style="text-decoration: none;"><i class="fas fa-guitar"></i> Cultural Activities</a>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <div class="text-center">
+                                    Budget
+                                </div>
+                            </a>
                         </li>
                     </ul>
                 </div>
-            </div>
-        </div>
-
-        <!-- Main Content -->
-        <div class="col-md-9">
-            <!-- Navigation Menu -->
-            <nav class="navbar navbar-expand-lg navbar-light bg-transparent fixed">
-                <div class="container-fluid border-bottom border-dark">
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav">
-                            <li class="nav-item">
-                                <a class="nav-link nav-box" href="#overview">
-                                    <div class="p-2 align-items-center flex-fill flex-grow-1 ">
-                                        Overview
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link nav-box" href="#photos">
-                                    <div class="p-2 align-items-center flex-fill flex-grow-1">
-                                        Photos
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link nav-box" href="#facilities">
-                                    <div class="p-2 align-items-center flex-fill flex-grow-1">
-                                        Hospitals/Facilities
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link nav-box" href="#departments">
-                                    <div class="p-2 align-items-center flex-fill flex-grow-1">
-                                        Departments
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link nav-box" href="/faq/">
-                                    <div class="p-2 align-items-center flex-fill flex-grow-1">
-                                        Q&As
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link nav-box" href="#budget">
-                                    <div class="p-2 align-items-center flex-fill flex-grow-1">
-                                        Budget
-                                    </div>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
             </nav>
+        </div>
             
-            <!-- Carousel -->
-            <div class="jumbotron text-center text-white position-relative rounded" style="background-image: url('{% static 'images/image-2.jpg' %}'); background-size: cover; background-position: center; min-height: 60vh;">
-                <div style="background-color: rgba(0, 0, 0, 0.5); position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></div>
-                    <div class="position-absolute top-50 start-50 translate-middle" style="z-index: 1;">
-                        <div class="container">
-                        <h1 class="display-4" style="font-weight: bold;">An experience of a lifetime</h1>
-                        <a class="btn btn-primary btn-lg mt-3" href="/contact/" role="button">Get Started</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Section 1 (same height as sidebar): Why Choose Elective Abroad? -->
-            <div class="" id="overview">
-                    <div class="row mt-4 text-center text-md-start" style="padding-bottom: 5px;">
-                        <h2 class="text-center" >Why Choose Elective Abroad?</h2>
-                        <p>Elective Abroad is the leading organizer of Healthcare internships and volunteer placements in Africa. No one comes close to the quality and responsiveness of our programs; we organize an end-to end placement and mean every word that you read.</p>
-                        <p>Our experience in organizing pre-medical hospital exposure, medical Nursing, & Dental electives gives you an experience of a lifetime! Get hosted by native experts who are there from the pre-departure process till airport drop-off when you bid us bye.</p>
-                        <div class="text-center">
-                            <a class="btn btn-primary btn-sl mt-3" href="/why-us/" role="button">Learn More</a>
-                        </div>
-                    </div>
-                </div>
+        <div class="carousel slide carousel-fade h-100 d-block" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+        <!-- Carousel indicators -->
+    </div>
+    <div class="carousel-inner" style="max-height: 650px;">
+        <div class="carousel-item active" id="slide-1">
+            <img src="{% static 'images/image-1.jpg' %}" alt="Image 1" class="img-fluid mx-auto"> <!-- Center the image vertically -->
+            <div class="dark-mask"></div> <!-- Add a dark mask overlay -->
+            <div class="carousel-caption d-flex h-100 align-items-center">
+                <h1 class="display-2"><strong>“An experience of a lifetime”</strong></h1>
             </div>
         </div>
- 
-            <!-- Section 2: Program Pricing -->
-            <div class="row mt-4">
-                    <div class="col-md-6 text-center text-md-start">
-                        <h2 class="text-center">Program Pricing</h2>
-                        <p>At Elective Abroad, we prioritize affordability because we understand that pursuing your dreams shouldn't break the bank. Our pricing structure is designed to be competitive, ensuring that you receive exceptional value for your investment in your education and international elective program.</p>
-                        <p>Transparency is at the core of our pricing philosophy. We believe that you should always know exactly what you're paying for, and that's why we have a commitment to no hidden fees. When you choose Elective Abroad, you can trust that the price you see is the price you pay.</p>
-                        <div class="text-center">
-                            <a class="btn btn-primary btn-sl mt-3" href="/pricing/" role="button">View Pricing</a>
-                        </div>
-                    </div>
-                    
-                    <div class="col-md-6 rounded">
-                        <div class="image-container rounded">
-                            <img src="static/images/image-4.jpg" alt="Image 2" class="img-fluid rounded img-zoom h-100" style="max-height: 60vh" />
-                        </div>
-                    </div>
-            </div>
-
-            <!-- Section 3: Stay Informed with Our Blog -->
-            <div class="row mt-4">
-                    <div class="col-md-6 text-center text-md-start">
-                        <h2 class="text-center">Stay Informed with Our Blog</h2>
-                        <p>Our blog keeps you updated on elective programs and travel tips. Read informative articles about elective opportunities, discover experiences shared by students who've traveled with us, and get travel tips, cultural insights, and destination highlights. Stay connected with us through our blog to make the most of your elective journey.</p>
-                        <div class="text-center">
-                            <a class="btn btn-primary btn-sl mt-3" href="/blog/" role="button">Read Blog</a>
-                        </div>
-                    </div>
-                
-                    <div class="col-md-6">
-                    <!-- Image container -->
-                        <div class="image-container">
-                            <img src="static/images/image-3.jpg" alt="Image 3" class="img-fluid rounded img-zoom h-100" style="max-height: 60vh"/>
-                        </div>
-                    </div>
-            </div>
-
-
-        <!-- Section 4: Testimonials and Success Stories -->
-        <div class="row mt-4 ">
-            <div class="col-md-12 text-center">
-                <h2>What Our Participants Say</h2>
+        <div class="carousel-item" id="slide-2">
+            <img src="{% static 'images/image-2.jpg' %}" alt "Image 2" class="img-fluid mx-auto"> <!-- Center the image vertically -->
+            <div class="dark-mask"></div> <!-- Add a dark mask overlay -->
+            <div class="carousel-caption d-flex h-100 align-items-center">
+                <h1 class="display-2"><strong>“An experience of a lifetime”</strong></h1>
             </div>
         </div>
-                
-        <div class="row mt-4">
-            <div class="col-md-4">
-                <div class="card testimonial-card h-100 border-0" style="box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;;">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Drew Hulse , Kansas , United States </h5>
-                        <img src="static/images/images/drew.jpg" alt="Drew Hulse" class="img-fluid rounded-circle" style="width: 100px; height: 100px;"/>
-                        <p class="card-text">"Overall the experience I`ve had in Mombasa and with the other students has been memorable. I have made some great new friends and will hopefully be able to visit them when we all return back to the states.” it lovers be warmly by. Little do it eldest former be if. sentiments insipidity inhabiting in. Off melancholy alteration principles old. Is do speedily kindness properly oh. Respect article painted cottage he is offices parlors."</p>
-                    </div>
-                </div>
-            </div>
-                    
-            <div class="col-md-4">
-                <div class="card testimonial-card h-100 border-0" style="box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;" >
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Ida W. Bjorntvedt , Oslo , Norway </h5>
-                        <img src="static/images/images/ida.jpg" alt="Ida W. Bjorntvedt" class="img-fluid rounded-circle" style="width: 100px; height: 100px;"/>
-                        <p class="card-text">"Elective Abroad is a highly educative program for all medical students. If you have special interests in fields like Obsterics/gyn, general surgery and tropical medicine this is a very good program. The experience I had in Mombasa has been memorable and I highly recommend ElectiveAbroad to anyone considering applying."</p>
-                    </div>
-                </div>
-            </div>
-                
-            <div class="col-md-4">
-                <div class="card testimonial-card h-100 border-0" style="box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Michelle Carey,Leigh-on-Sea </h5>
-                        <img src="static/images/images/michelle.jpg" alt="Michelle Carey" class="img-fluid rounded-circle" style="width: 100px; height: 100px;"/>
-                        <p class="card-text">"I want to say I think it is a fantastic program …I did the senior program so what I wanted out of an African elective program was plenty of hands on experience and to get the opportunity to see tropical / unusual diseases we would not see in the UK. And I got both of these. Coast is a brilliant hospital to be placed at. It probably helps that it is a teaching hospital, so many Kenyan students were there too, but it means you get taught by knowledgeable, enthusiastic and relevant staff."</p>
-                    </div>
-                </div>
+        <div class="carousel-item" id="slide-3" >
+            <img src="{% static 'images/image-3.jpg' %}" alt="Image 3" class="img-fluid mx-auto"> <!-- Center the image vertically -->
+            <div class="dark-mask"></div> <!-- Add a dark mask overlay -->
+            <div class="carousel-caption d-flex h-100 align-items-center">
+                <h1 class="display-2"><strong>“An experience of a lifetime”</strong></h1>
             </div>
         </div>
+    </div>
 
-        <!-- Section 5: Our Partners -->
-<div class="row mt-4" id="partners">
-    <div class="col-md-12 text-center">
-        <h2>Our Partners</h2>
+    <a class="carousel-control-prev"  role="button" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </a>
+    <a class="carousel-control-next" role="button" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </a>
+</div>
+
     </div>
 </div>
 
-<div class="row mt-4 rounded">
-    <div class="col-md-3">
-        <!-- Partner 1 -->
-        <div class="partner-logo text-center">
-            <img src="static/images/amsa.png" alt="Partner 1 Logo" class="img-fluid" />
-        </div>
-    </div>
 
-    <div class="col-md-3">
-        <!-- Partner 2 -->
-        <div class="partner-logo text-center">
-            <img src="static/images/amsa2.png" alt="Partner 2 Logo" class="img-fluid" />
+<!-- Section 1: Why Choose Elective Abroad? -->
+<div class="row text-center bg-light">
+    <h2 class="text-center">Why Choose Elective Abroad?</h2>
+        <p>Elective Abroad is the leading organizer of Healthcare internships and volunteer placements in Africa. No one comes close to the quality and responsiveness of our programs; we organize an end-to end placement and mean every word that you read.</p>
+        <p>Our experience in organizing pre-medical hospital exposure, medical Nursing, & Dental electives gives you an experience of a lifetime! Get hosted by native experts who are there from the pre-departure process till airport drop-off when you bid us bye.</p>
+        <p>Our commitment to providing unparalleled support extends to ensuring your safety and comfort throughout your healthcare internship or volunteer placement in Africa.</p>
+        <div class="p-2 text-center">
+            <a class="btn btn-primary btn-sl mt-3" href="/about-us/" role="button">Learn More</a>
         </div>
+</div>
+          
+<!-- Section 2: Program Pricing -->
+<div class="row p-2">
+    <div class="col-md-6 text-center text-md-start">
+        <h2 class="text-center">Program Pricing</h2>
+            <p>At Elective Abroad, we prioritize affordability because we understand that pursuing your dreams shouldn't break the bank. Our pricing structure is designed to be competitive, ensuring that you receive exceptional value for your investment in your education and international elective program.</p>
+            <p>Transparency is at the core of our pricing philosophy. We believe that you should always know exactly what you're paying for, and that's why we have a commitment to no hidden fees. When you choose Elective Abroad, you can trust that the price you see is the price you pay.</p>
+            <p>We firmly believe that you should always have a clear understanding of what you're paying for. To uphold this principle, we are dedicated to a policy of no hidden fees. When you choose Elective Abroad, you can embark on your journey with confidence, knowing that the price you see is the price you pay.</p>
+            <div class="text-center" style="padding-bottom: 10px;">
+                <a class="btn btn-primary btn-sl mt-3" href="/pricing/" role="button">View Pricing</a>
+            </div>
     </div>
-
-    <div class="col-md-3">
-        <!-- Partner 3 -->
-        <div class="partner-logo text-center">
-            <img src="static/images/umsa.png" alt="Partner 3 Logo" class="img-fluid" />
-        </div>
-    </div>
-
-    <div class="col-md-3">
-        <!-- Partner 4 -->
-        <div class="partner-logo text-center">
-            <img src="static/images/emsa.png" alt="Partner 4 Logo" class="img-fluid" />
-        </div>
+    <div class="col-md-6 rounded">
+        <img src="static/images/image-4.jpg" alt="Image 2" class="rounded img-fluid d-block">
     </div>
 </div>
 
-<!-- Section 6: Key Program Features -->
-<div class="row mt-4" id="features">
+<div class="row bg-light">
     <div class="col-md-12 text-center">
         <h2>Key Program Features</h2>
     </div>
-</div>
-
-<div class="row mt-4">
-    <div class="col-md-4">
-        <div class="card h-100 border-0" style="box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;">
+    <div class="col-md-4" style="padding-bottom: 10px;" >
+        <div class="card h-100 border-0">
             <div class="card-body text-center">
-                <h5 class="card-title">Types of Placements</h5>
+                <h5 class="card-title text-primary-emphasis">Types of Placements</h5>
                 <p class="card-text">Our programs offer a wide range of placements, including Internal Medicine, Dentistry, Surgery, and more. You can choose the specialty that aligns with your career goals.</p>
             </div>
         </div>
     </div>
 
-    <div class="col-md-4">
-        <div class="card h-100 border-0" style="box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;">
+    <div class="col-md-4" style="padding-bottom: 10px;">
+        <div class="card h-100 border-0" >
             <div class="card-body text-center">
-                <h5 class="card-title">Program Duration</h5>
+                <h5 class="card-title text-primary-emphasis ">Program Duration</h5>
                 <p class="card-text">You can select the program duration that suits your schedule. Whether you're looking for short-term experiences or extended placements, we have options for you.</p>
             </div>
         </div>
     </div>
 
-    <div class="col-md-4">
-        <div class="card h-100 border-0" style="box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;">
+    <div class="col-md-4" style="padding-bottom: 10px;">
+        <div class="card h-100 border-0">
             <div class="card-body text-center">
-                <h5 class="card-title">Operating Countries</h5>
+                <h5 class="card-title text-primary-emphasis">Operating Countries</h5>
                 <p class="card-text">We operate in multiple African countries, including Kenya, Tanzania, Zambia, and Malawi. Explore different healthcare systems and cultures across these destinations.</p>
             </div>
         </div>
@@ -298,16 +225,114 @@
 </div>
 </div>
 
-<div id="exit-popup" class="exit-popup">
-    <div class="exit-popup-content">
-        <h2>Don't Miss Out!</h2>
-        <p>Subscribe to our newsletter for exclusive offers and updates.</p>
-        <form id="email-subscription-form">
-            <input type="email" placeholder="Enter your email" required>
-            <button type="submit">Subscribe</button>
-        </form>
-        <a href="#" id="exit-popup-close">No, thanks</a>
+
+<!-- Section 3: Stay Informed with Our Blog -->
+<div class="row p-2">
+    <div class="col-md-6 text-center text-md-start">
+        <h2 class="text-center">Stay Informed with Our Blog</h2>
+        <p>Our blog keeps you updated on elective programs and travel tips. Read informative articles about elective opportunities, discover experiences shared by students who've traveled with us, and get travel tips, cultural insights, and destination highlights. Stay connected with us through our blog to make the most of your elective journey.</p>
+        <p>Engaging with our blog not only offers educational value but also provides a window into the cultural richness of destinations. Discover the allure of various places through destination highlights, cultural insights, and captivating travel stories. Whether you're a prospective student traveler or an avid explorer, our blog will be your trusty companion in making the most of your elective journey.</p>
+        <p>Stay connected with us and explore the world of elective programs and travel through the eyes of our informative blog, ensuring you're well-prepared for your educational adventures ahead.</p>
+        <div class="text-center" style="padding-bottom: 10px;">
+            <a class="btn btn-primary btn-sl mt-3" href="/blog/" role="button">Read Blog</a>
+        </div>
+    </div>
+    <div class="col-md-6 rounded">
+        <img src="static/images/image-3.jpg" alt="Image 3" class="rounded img-fluid d-block"/>
     </div>
 </div>
+
+
+<!-- Section 4: Testimonials and Success Stories -->
+    <div class="row p-2 bg-light">
+        <div class="text-center">
+            <h2>What Our Participants Say</h2>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="card testimonial-card border-0 d-flex flex-column h-100">
+                    <div class="card-body text-center flex-fill">
+                        <img src="static/images/images/drew.jpg" alt="Drew Hulse" class="img-fluid rounded-circle testimonial-img">
+                        <h5 class="card-title">Drew Hulse, Kansas, United States</h5>
+                        <p class="card-text italicized-text">“Overall the experience I've had in Mombasa and with the other students has been memorable. I have made some great new friends and will hopefully be able to visit them when we all return back to the states. It lovers be warmly by. Little do it eldest former be if. Sentiments insipidity inhabiting in. Off melancholy alteration principles old. Is do speedily kindness properly oh. Respect article painted cottage he is offices parlors.”</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card testimonial-card border-0 d-flex flex-column h-100">
+                    <div class="card-body text-center flex-fill">
+                        <img src="static/images/images/ida.jpg" alt="Ida W. Bjorntvedt" class="img-fluid rounded-circle testimonial-img">
+                        <h5 class="card-title">Ida W. Bjorntvedt, Oslo, Norway</h5>
+                        <p class="card-text italicized-text">“Elective Abroad is a highly educative program for all medical students. If you have special interests in fields like Obstetrics/gyn, general surgery, and tropical medicine, this is a very good program. The experience I had in Mombasa has been memorable, and I highly recommend ElectiveAbroad to anyone considering applying.”</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card testimonial-card border-0 d-flex flex-column h-100">
+                    <div class="card-body text-center flex-fill">
+                        <img src="static/images/images/michelle.jpg" alt "Michelle Carey" class="img-fluid rounded-circle testimonial-img">
+                        <h5 class="card-title">Michelle Carey, Leigh-on-Sea</h5>
+                        <p class="card-text italicized-text">“I want to say I think it is a fantastic program... I did the senior program so what I wanted out of an African elective program was plenty of hands-on experience and the opportunity to see tropical/unusual diseases we would not see in the UK. And I got both of these. Coast is a brilliant hospital to be placed at. It probably helps that it is a teaching hospital, so many Kenyan students were there too, but it means you get taught by knowledgeable, enthusiastic, and relevant staff.”</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+<!-- Section 5: Our Partners -->
+<div class="row mt-4" id="partners">
+    <div class="col-md-12 text-center">
+        <h2 class="fw-bold">Our Partners</h2>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6 text-center h-100">
+        <p>Elective Abroad works in partnership with various public and private organizations and institutions. These range from medical colleges, teaching hospitals, and regional hospitals, among others. Our program advisors are college professors and medical consultants at various health facilities.</p>
+        <p>Some of our placement partners include:</p>
+        <ul class="list-group list-group-flush text-center">
+            <li class="list-group-item">Kenyatta National Teaching Hospital, Nairobi, Kenya</li>
+            <li class="list-group-item">University of Nairobi, Kenya</li>
+            <li class="list-group-item">Coast General Hospital, Mombasa, Kenya</li>
+            <li class="list-group-item">Moi Teaching and Referral Hospital, Eldoret, Kenya</li>
+            <li class="list-group-item">Muhimbili Hospital, Dar-es-Salaam, Tanzania</li>
+            <li class="list-group-item">University Teaching Hospital, Zambia</li>
+            <li class="list-group-item">Queen Elizabeth Hospital, Malawi</li>
+            <li class="list-group-item">Kenya Medical Research Institute, KEMRI</li>
+            <li class="list-group-item">Port Reitz Hospital, Mombasa, Kenya</li>
+        </ul>
+        <p>For anyone who has spent time trying to navigate public institutions in the developing world, this can be a very challenging experience. We have developed strong relationships and networks with these hospitals and are also familiar with the healthcare and educational systems in the western countries. We are therefore uniquely positioned to facilitate medical electives, camps, and projects for anyone looking to Africa as a destination.</p>
+    </div>
+    
+    <div class="col md-6 h-100">
+    <div class="row">
+        <!-- Partner 1 -->
+        <div class="partner-logo text-center">
+            <a href="https://www.amsa.org/">
+                <img src="static/images/amsa.png" alt="Partner 1 Logo" class="img-fluid">
+            </a>
+        </div>
+    </div>
+
+    <div class="row">
+        <!-- Partner 2 -->
+        <div class="partner-logo text-center">
+            <a href="https://www.amsa.org.au/">
+                <img src="static/images/amsa2.png" alt="Partner 2 Logo" class="img-fluid mx-auto d-block" />
+            </a>
+        </div>
+    </div>
+
+    <div class="row">
+        <!-- Partner 3 -->
+        <div class="partner-logo text-center">
+            <a href="https://ukrmsa.com/">
+                <img src="static/images/umsa.png" alt="Partner 3 Logo" class="img-fluid mx-auto d-block" />
+            </a>
+        </div>
+    </div>
 {% endblock %}
+
 

@@ -28,8 +28,3 @@ class ProgramFees(models.Model):
     tuition = models.DecimalField(max_digits=10, decimal_places=2)
     housing = models.DecimalField(max_digits=10, decimal_places=2)
     # Add more fields as needed
-
-
-
-
-

@@ -1,8 +1,0 @@
-{
-  "[python]": {
-    "editor.defaultFormatter": "ms-python.autopep8"
-  },
-  "python.formatting.provider": "none",
-  "appService.defaultWebAppToDeploy": "/subscriptions/422932f8-7d62-4b6b-bb1b-dc29ccf85e58/resourceGroups/appsvc_linux_centralus_basic/providers/Microsoft.Web/sites/elective-abroad",
-  "appService.deploySubpath": "."
-}

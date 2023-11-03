@@ -89,4 +89,9 @@
     background: rgba(0, 0, 0, 0.5); /* Dark overlay color with 50% opacity */
 }
 
+.list-group-item {
+    background: #41437F;
+}
+
 /* Add more CSS for styling your pop-up and form as needed. */
+

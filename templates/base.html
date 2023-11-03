@@ -27,61 +27,70 @@
 </head>
 <body>
 
-<div class="bg-light text-center py-2 ">
+<div class="text-center py-2 ">
     <div class="container">
         <!-- Social Media Icons -->
         <a href="https://www.facebook.com/ElectiveAbroad" class="me-3" style="text-decoration:none;">
-            <i class="fab fa-facebook fa-xl"></i>
+            <i class="fab fa-facebook fa-xl" style="color: #413271"></i>
         </a>
         <a href="https://twitter.com/ElectiveAbroad" class="me-3" style="text-decoration:none;">
-            <i class="fab fa-twitter fa-xl"></i>
+            <i class="fab fa-twitter fa-xl" style="color: #413271"></i>
         </a>
         <a href="https://www.linkedin.com/company/elective-abroad-ltd" class="me-3" style="text-decoration:none;">
-            <i class="fab fa-linkedin fa-xl"></i>
+            <i class="fab fa-linkedin fa-xl" style="color: #413271"></i>
         </a>
     </div>
 </div>
 
 <!-- Top Navbar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light sidebar-nav">
+<nav class="navbar navbar-expand-lg">
     <div class="container">
         <!-- Logo -->
         <a class="navbar-brand" href="/">
-            <img src="{% static 'images/logo.jpg' %}" alt="Elective Abroad Logo" width="160px">
+            <img src="{% static 'images/logo.jpg' %}" alt="Elective Abroad Logo" height="100" width="150">
         </a>
         <!-- Mobile Menu Toggle Button -->
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarNav" aria-controls="navbarNav">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="/">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/programs/">Programs</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/destinations/">Destinations</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/pricing/">Pricing</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/blog/">Blog</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/contact/">Contact Us</a>
-                </li>
-                <li class="nav-item">
-                    <a class="btn btn-primary apply-button" href="/contact/">
-                        Apply Now <i class="fa-regular fa-circle-right" style="color: #f5f9ff;"></i>
-                    </a>
-                </li>
-            </ul>
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="navbarNav" aria-labelledby="navbarNavLabel">
+            <div class="offcanvas-header text-center">
+                <h5 class="offcanvas-title text-center" id="navbarNavLabel">Menu</h5>
+                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/programs/">Programs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/destinations/">Destinations</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/pricing/">Pricing</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/blog/">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contact/">Contact Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn custom-primary apply-button" href="/contact/">
+                            Apply Now <i class="fa-regular fa-circle-right" style="color: #f5f9ff;"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
 </nav>
+
+
+
 
 
 <!-- Page Content -->
@@ -91,25 +100,25 @@
 </div>
 
 
-<footer class="bg-dark text-light py-4">
-    <div class="container footer-bg">
-        <div class="row">
+<footer class="text-light py-4" style="background: #413271">
+    <div class="container-fluid">
+        <div class="row" >
             <div class="col-lg-3 col-md-6 mb-4">
                 <h5 class="border-bottom border-light pb-3 mb-3">
-                    <a href="/about-us/" style="text-decoration:none;">About Us</a>
+                    <a class="text-light" href="/about-us/" style="text-decoration:none;">About Us</a>
                 </h5>
                 <p>Elective Abroad is the leading organizer of Healthcare internships and volunteer placements in Africa.</p>
                 <p>No one comes close to the quality and responsiveness of our programs; we organize an end-to-end placement and mean every word that you read.</p>
                 <a class="navbar-brand text-center" href="/">
-                    <img class="text-center" src="{% static 'images/logo.jpg' %}" alt="Elective Abroad Logo" width="230px">
+                    <img src="{% static 'images/logo.jpg' %}" alt="Elective Abroad Logo" width="230px">
                 </a>
             </div>
             
             <div class="col-lg-3 col-md-6 mb-4">
                 <h5 class="border-bottom border-light pb-3 mb-3">
-                    <a href="/contact/" style="text-decoration: none">Electives</a>
+                    <a class="text-light" href="/contact/" style="text-decoration: none">Electives</a>
                 </h5>
-                <ul class="list-styled">
+                <ul class="list-unstyled">
                     <li><a class="text-light" style="text-decoration: none;" href="/programs/program_detail/1/">Pre-Med Program</a></li>
                     <li><a class="text-light" style="text-decoration: none;" href="#">Medical Program</a></li>
                     <li><a class="text-light" style="text-decoration: none;" href="#">Pre-Nursing Program</a></li>
@@ -122,14 +131,14 @@
             </div>
             <div class="col-lg-3 col-md-6 mb-4">
                 <h5 class="border-bottom border-light pb-3 mb-3">
-                    <a href="/contact/"  style="text-decoration: none;">Gap Year and Volunteering</a>
+                    <a class="text-light" href="/contact/"  style="text-decoration: none;">Gap Year and Volunteering</a>
                 </h5>
                 <ul class="list-unstyled">
                 </ul>
             </div>
             <div class="col-lg-3 col-md-6 mb-4">
                 <h5 class="border-bottom border-light pb-3 mb-3">
-                    <a href="/contact/" style="text-decoration: none;">Exchange Programs</a>
+                    <a class="text-light" href="/contact/" style="text-decoration: none;">Exchange Programs</a>
                 </h5>
                 <ul class="list-unstyled">
                 </ul>
@@ -208,4 +217,3 @@
 
 </body>
 </html>
-

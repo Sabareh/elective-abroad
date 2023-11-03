@@ -1,11 +1,10 @@
 /* Navbar */
 .navbar {
-    background-color: #ffffff;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
 }
 
 .navbar-brand {
-    font-size: 1.5rem;
+    font-size: 2.5rem;
     font-weight: bold;
 }
 
@@ -14,7 +13,7 @@
 }
 
 .nav-link {
-    color: #331cdf;
+    color: #413271;
     margin: 0 25px;;
     transition: color 0.3s;
 }
@@ -31,13 +30,11 @@
 }
 
 .navbar-toggler-icon {
-    background-color: #ffffff; /* Set to the desired background color */
-    border-radius: 4px; /* Add border radius for a button-like appearance */
+    background-color: #fff; /* Set to the desired background color */
 }
 
-/* Add smooth animation when the toggle button is clicked */
+
 .navbar-toggler:focus {
-    outline: none; /* Remove focus outline */
     background-color: #fff; /* Set to the desired background color */
     transform: scale(1.5); /* Add a scale transform for a smooth animation */
 }
@@ -173,10 +170,9 @@
     left: 0; /* Slide in from the left */
 }
 
-.footer-bg {
-    background-image: url("static\images\footer-background.jpg"); /* Replace 'path-to-your-image.jpg' with the actual path to your background image */
-    background-size: cover;
-    background-position: center;
-    color: #fff; /* Text color for the footer content */
-    padding: 20px 0; /* Adjust the padding as needed */
+
+.custom-primary {
+    background-color: #413271;
+    border-color: #413271;
+    color: #f5f9ff; /* Text color */
 }

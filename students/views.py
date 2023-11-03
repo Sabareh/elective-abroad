@@ -9,6 +9,9 @@ def about_us(request):
     # Your view logic here
     return render(request, 'about-us.html')
     
+def cookie-policy(request):
+    return render(request, 'cookie-policy.html')
+    
 def student_profile(request, student_id):
     student = StudentProfile.objects.get(pk=student_id)
     return render(request, 'students/student_profile.html', {'student': student})  

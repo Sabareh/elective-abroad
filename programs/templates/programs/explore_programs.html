@@ -10,27 +10,27 @@
             <h1 class="display-4"><strong>Explore Programs</strong></h1>
         </div>
     </div>
-        <div class="col-md-9">
-            {% for program in programs %}
-            <div class="col-md-4 mb-4">
-                <div class="card">
-                    <img src="{% static program.image.url %}" class="card-img-top" alt="{{ program.title }}">
-                    <div class="card-body">
-                        <p class="card-text">{{ program.description|truncatechars:100 }}</p>
-                    </div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item"><strong>Location:</strong> {{ program.location }}</li>
-                        <li class="list-group-item"><strong>Category</strong> {{ program.category }}</li>
-                        <li class="list-group-item"><strong>Dates:</strong> {{ program.start_date }} - {{ program.end_date }}</li>
-                        <li class="list-group-item"><strong>Capacity:</strong> {{ program.capacity }} students</li>
-                    </ul>
-                    <div class="card-body">
-                        <a href="{% url 'programs:program_detail' program.id %}" class="btn btn-primary btn-block">Learn More</a>
-                    </div>
+    <div class="row mt-4">
+        {% for program in programs %}
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img src="{% static program.image.url %}" class="card-img-top img-zoom" style="max-height: 40vh;">
+                <div class="card-body">
+                    <h5 class="card-title">{{ program.name }}</h5>
+                    <p class="card-text">{{ program.description|truncatechars:100 }}</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><strong>Location:</strong> {{ program.location }}</li>
+                    <li class="list-group-item"><strong>Category: </strong> {{ program.category }}</li>
+                    <li class="list-group-item"><strong>Dates:</strong> {{ program.start_date }} - {{ program.end_date }}</li>
+                    <li class="list-group-item"><strong>Capacity:</strong> {{ program.capacity }} students</li>
+                </ul>
+                <div class="card-body">
+                    <a href="{% url 'programs:program_detail' program.id %}" class="btn btn-primary btn-block">Learn More</a>
                 </div>
             </div>
-            {% endfor %}
         </div>
+        {% endfor %}
     </div>
 </div>
 {% endblock %}
